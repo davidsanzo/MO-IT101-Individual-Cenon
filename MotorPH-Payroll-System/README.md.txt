@@ -16,3 +16,11 @@ This project demonstrates a simple payroll system designed to manage employee re
 
 ## Author
 David Sanzo Cenon
+
+## Improvements Based on Feedback
+
+- Added Java implementation of payroll system
+- Improved file structure and organization
+- Fixed file extensions
+- Added project plan documentation
+- Added comments for better readability
