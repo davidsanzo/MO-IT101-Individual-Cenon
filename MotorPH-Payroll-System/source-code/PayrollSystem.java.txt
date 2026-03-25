@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class PayrollSystem {
+
+    // Compute hours worked
+    public static double computeHours(double timeIn, double timeOut) {
+        return timeOut - timeIn;
+    }
+
+    // Compute gross salary
+    public static double computeGross(double hours, double rate) {
+        return hours * rate;
+    }
+
+    // Compute deductions
+    public static double computeDeductions(double gross) {
+        double sss = gross * 0.05;
+        double philhealth = gross * 0.02;
+        double pagibig = 100;
+        return sss + philhealth + pagibig;
+    }
+
+    // Compute net salary
+    public static double computeNet(double gross, double deductions) {
+        return gross - deductions;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String employeeName = "Juan Dela Cruz";
+        double hourlyRate = 100;
+
+        System.out.print("Enter Time In: ");
+        double timeIn = sc.nextDouble();
+
+        System.out.print("Enter Time Out: ");
+        double timeOut = sc.nextDouble();
+
+        // Step 1: Compute hours
+        double hoursWorked = computeHours(timeIn, timeOut);
+
+        // Step 2: Compute gross salary
+        double grossSalary = computeGross(hoursWorked, hourlyRate);
+
+        // Step 3: Compute deductions
+        double deductions = computeDeductions(grossSalary);
+
+        // Step 4: Compute net salary
+        double netSalary = computeNet(grossSalary, deductions);
+
+        System.out.println("\n--- Payroll Summary ---");
+        System.out.println("Employee: " + employeeName);
+        System.out.println("Hours Worked: " + hoursWorked);
+        System.out.println("Gross Salary: " + grossSalary);
+        System.out.println("Deductions: " + deductions);
+        System.out.println("Net Salary: " + netSalary);
+
+        sc.close();
+    }
+}
